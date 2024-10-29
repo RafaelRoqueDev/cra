@@ -12,3 +12,41 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 2cqmin;
+
+  label {
+    font-size: 26px;
+    font-weight: bold;
+    color: blueviolet;
+  }
+
+  input {
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    color: rgb(233, 191, 141);
+  }
+
+  button {
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(233, 191, 141);
+    border: 2px solid rgb(255, 255, 255);
+    cursor: pointer;
+    color: white;
+    transition: 0.3s;
+    &:hover {
+      background-color: rgb(255, 255, 255);
+      color: rgb(233, 191, 141);
+    }
+  }
+}

@@ -10,17 +10,23 @@
   Objetivo: Vamos usar o useState para manipular
   o saldo da conta, simulando uma mudança no saldo.
 
+  * (3 - Adicionando o componente AddFundsForm)
+
+  Objetivo: Vamos atualizar o saldo através do componente
+  AddFundsForm. Vimos como conectar diferentes
+  componentes e como passar props entre eles.
 */
 
 
 import { useState } from "react";
-import AccountCard from "./components/accountCard";
+import AccountCard from "./components/AccountCard";
+import AddFundsForm from "./components/AddFundsForm";
 
 const App = () => {
   const [balance, setBalance] = useState(5000);
 
-  const handleAddFunds = () => {
-    setBalance(balance + 500);
+  const handleAddFunds = (amount: number) => {
+    setBalance(balance + amount);
   }
 
   return (
@@ -30,7 +36,9 @@ const App = () => {
         name="Conta Principal"
         balance={balance}
       />
-      <button onClick={handleAddFunds}>Adicionar R$ 500</button>
+      <AddFundsForm
+       onAddfunds={handleAddFunds}
+      />
     </div>
   )
 };
