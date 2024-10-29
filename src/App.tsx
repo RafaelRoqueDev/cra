@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/*
+  *(1 - Importando e Utilizando um Componente)
 
-function App() {
+  Objetivo: Entender como importar e utilizar
+  um componente, passndo dados para ele através
+  de props.
+
+  * (2 - Adicionando Estado com useState)
+
+  Objetivo: Vamos usar o useState para manipular
+  o saldo da conta, simulando uma mudança no saldo.
+
+*/
+
+
+import { useState } from "react";
+import AccountCard from "./components/accountCard";
+
+const App = () => {
+  const [balance, setBalance] = useState(5000);
+
+  const handleAddFunds = () => {
+    setBalance(balance + 500);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Sitema de Gestão de Contas</h1>
+      <AccountCard
+        name="Conta Principal"
+        balance={balance}
+      />
+      <button onClick={handleAddFunds}>Adicionar R$ 500</button>
     </div>
-  );
-}
+  )
+};
 
 export default App;
