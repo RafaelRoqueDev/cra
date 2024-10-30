@@ -15,8 +15,8 @@
   Objetivo: Vamos atualizar o saldo através do componente
   AddFundsForm. Vimos como conectar diferentes
   componentes e como passar props entre eles.
-*/
 
+//----------------------------------------------
 
 import { useState } from "react";
 import AccountCard from "./components/AccountCard";
@@ -40,6 +40,38 @@ const App = () => {
        onAddfunds={handleAddFunds}
       />
     </div>
+  )
+};
+
+export default App;
+
+*/
+
+//----------------------------------------------
+
+/*
+  (4 - Adicionando o Contexto na App e no AccountList)
+  Objetivo: Vamos adicionar o contexto na App e no AccountList.
+  Vimos como utilizar o contexto para compartilhar dados entre componentes.
+  AccountList use dados global do contexto para renderizar a lista de contas.
+
+*/
+
+
+import AccountList from "./components/AccountList";
+import AddAccountForm from "./components/AddFundsForm";
+import { AccountProvider } from "./context/AccountContext";
+
+
+const App = () => {
+  return (
+    <AccountProvider>
+      <div style={{ padding: '20px' }}>
+        <h1>Sistema de Gestão de Contas</h1>
+        <AddAccountForm />
+        <AccountList accounts={[]} />
+      </div>
+    </AccountProvider>
   )
 };
 

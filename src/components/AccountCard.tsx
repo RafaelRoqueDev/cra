@@ -2,7 +2,7 @@
   (1 - Criando o primeiro componente: AccountCard)
 
   Esse componente exibirá uma "conta" simples, com nome e saldo
-  Vamos entender a estrutura básica de um componente em 
+  Vamos entender a estrutura básica de um componente em
   React e como tipá-lo com TypeScript.
 
   (2 - Usando o Encadeamento Opcional e Props Extras)
