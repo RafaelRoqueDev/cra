@@ -6,19 +6,11 @@
   map e utilizar a propriedade key para cada item.
 */
 
-import AccountCard from './AccountCard'
+import { useAccountContext } from "../context/AccountContext";
 
-interface Account {
-  id: number
-  name: string
-  balance: number
-}
 
-interface AccountListProps {
-  accounts: Account[]; // Adiciona o id da interface Account;
-}
-
-const AccountList: React.FC<AccountListProps> = ({ accounts }) => {
+const AccountList: React.FC = () => {
+  const { accounts } = useAccountContext(); //Obtenha a lista do contexto diretamente
   return (
     <div>
       <h2>Lista de Contas:</h2>

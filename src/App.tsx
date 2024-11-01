@@ -58,21 +58,21 @@ export default App;
 */
 
 
-import AccountList from "./components/AccountList";
-import AddAccountForm from "./components/AddFundsForm";
-import { AccountProvider } from "./context/AccountContext";
+import React from 'react';
+import { AccountProvider } from './context/AccountContext';
+import AccountList from './components/AccountList';
+import AddAccountForm from './components/AddFundsForm';
 
-
-const App = () => {
+const App: React.FC = () => {
   return (
     <AccountProvider>
       <div style={{ padding: '20px' }}>
         <h1>Sistema de Gestão de Contas</h1>
         <AddAccountForm />
-        <AccountList accounts={[]} />
+        <AccountList /> {/* o código está funcionado assim */}
       </div>
     </AccountProvider>
-  )
+  );
 };
 
 export default App;
